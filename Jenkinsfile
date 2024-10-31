@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Pull') { 
             steps {
-                git 'https://github.com/swaranjali09/terraform.git'
+                git 'https://github.com/nivas-22/Jenkins-Terra.git'
             }
         }
         stage('terraform init') {
