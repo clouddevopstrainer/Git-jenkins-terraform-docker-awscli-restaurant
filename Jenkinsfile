@@ -3,27 +3,27 @@ pipeline {
     stages {
         stage('Pull') { 
             steps {
-                git 'https://github.com/nivas-22/Jenkins-Terra.git'
+                git 'https://github.com/clouddevopstrainer/Jenkins-Terra.git'
             }
         }
         stage('terraform init') {
             steps {
-                sh 'terraform init'
+                sh 'sudo terraform init'
             }
         }
         stage('terraform plan') {
             steps {
-                sh 'terraform plan'
+                sh 'sudo terraform plan'
             }
         }
         stage('terraform validate') {
             steps {
-                sh 'terraform validate'
+                sh 'sudo terraform validate'
             }
         }
         stage('terraform apply') {
             steps {
-                sh 'terraform ${Action} --auto-approve'
+                sh 'sudo terraform ${Action} --auto-approve'
             }
         }
     }
