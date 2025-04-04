@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Pull') { 
             steps {
-                git 'https://github.com/clouddevopstrainer/Jenkins-Terra.git'
+                git 'https://github.com/clouddevopstrainer/jenkins-terraform-docker-awscli-restaurant.git'
             }
         }
 
