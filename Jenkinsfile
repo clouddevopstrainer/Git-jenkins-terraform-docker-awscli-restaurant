@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Pull') { 
             steps {
-                git 'https://github.com/clouddevopstrainer/jenkins-terraform-docker-awscli-restaurant.git'
+                git branch: 'master', url: 'https://github.com/clouddevopstrainer/Git-jenkins-terraform-docker-awscli-restaurant.git'
             }
         }
 
@@ -26,7 +26,7 @@ pipeline {
 
         stage('terraform init') {
             steps {
-                sh 'terraform init'  // Removed 'sudo' unless needed
+                sh 'terraform init'  // Initialize Terraform configuration
             }
         }
 
@@ -38,13 +38,13 @@ pipeline {
 
         stage('terraform validate') {
             steps {
-                sh 'terraform validate'  // Validate the configuration
+                sh 'terraform validate'  // Validate the Terraform configuration
             }
         }
 
         stage('terraform apply') {
             steps {
-                sh 'terraform apply --auto-approve'  // Apply the saved plan file
+                sh 'terraform apply --auto-approve plan.tfplan'  // Apply the saved plan file
             }
         }
     }
